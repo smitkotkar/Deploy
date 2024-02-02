@@ -8,11 +8,14 @@ module "eks" {
   subnets         = ["subnet-0d77d197c6bdb1669", "subnet-096f24687f167fa13", "subnet-0eb8d587e9a4e8051"]
   vpc_id          = "vpc-0bf146a55b2b621eb"
   cluster_version = "1.21"
+  subnets_public  = ["subnet-xxxxxx", "subnet-yyyyyy", "subnet-zzzzzz"]  # Specify your public subnets
+  map_roles       = ["arn:aws:iam::643925788640:role/Role_Terraform"]  # Add any IAM roles needed
 }
 
 output "kubeconfig" {
   value = module.eks.kubeconfig
 }
+
 
 
 
