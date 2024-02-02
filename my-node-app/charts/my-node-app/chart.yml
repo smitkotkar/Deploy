@@ -1,0 +1,5 @@
+# charts/my-node-app/Chart.yaml
+apiVersion: v2
+name: my-node-app
+description: A Helm chart for deploying a Node.js application on EKS
+version: 0.1.0

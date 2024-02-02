@@ -1,0 +1,18 @@
+# charts/my-node-app/values.yaml
+replicaCount: 2
+image:
+  repository: my-registry/my-node-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: "alb"
+  hosts:
+    - host: my-node-app.example.com
+      paths: ["/"]
